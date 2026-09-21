@@ -120,7 +120,7 @@ class ModelChoiceField(djangofields.ChoiceField):
     def _get_choices(self):
         return self.iterator(self)
 
-    choices = property(_get_choices, djangofields.ChoiceField._set_choices)
+    choices = property(_get_choices, djangofields.ChoiceField.choices.fset)
 
     def get_object(self, value):
         """Returns model instance."""
